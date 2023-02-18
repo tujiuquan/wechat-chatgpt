@@ -10,8 +10,8 @@ const bot =  WechatyBuilder.build({
   },
   puppet: "wechaty-puppet-wechat",
 });
-// get a Wechaty instance
 
+// get a Wechaty instance
 async function main() {
   await chatGPTBot.startGPTBot();
   bot
@@ -42,6 +42,7 @@ async function main() {
       }
     });
   try {
+    // @ts-ignore
     await bot.start();
   } catch (e) {
     console.error(
@@ -49,4 +50,4 @@ async function main() {
     );
   }
 }
-main();
+main().then(() => {});
